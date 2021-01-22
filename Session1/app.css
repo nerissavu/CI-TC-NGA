@@ -1,0 +1,44 @@
+#question {
+    background-color:#212121;
+    color: white;
+    border-radius: 20px;
+    height: 350px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#answers{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.answer{
+    width: 300px;
+    border-radius: 20px;
+    height: 200px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    border-radius: 20px;
+}
+
+#yes {
+    background-color: rgb(18, 233, 197);
+}
+
+#no {
+    background-color: red;
+}
+
+#troll{
+    width: 700px;
+    margin: auto;
+}
+
+.random-position {
+    position: absolute;
+}
+
