@@ -1,4 +1,3 @@
-//bài này em chưa làm xong ạ, nhma em sẽ cố gắng hoàn thiện nốt ạ
 
 var no_of_students = 0
 while (true){
@@ -42,3 +41,20 @@ function LetterGrade(gpa_scores){
 }
 
 LetterGrade(gpa_scores)
+
+var no_of_grade_A = 0
+var no_of_grade_B = 0
+var no_of_grade_F = 0
+for (var i = 0; i< no_of_students; i++){
+    if (gpa_scores[i] >= 8) {
+        no_of_grade_A++;
+      } else if (gpa_scores[i] >= 7) {
+        no_of_grade_B++;
+      } else if (gpa_scores[i] <4) {
+        no_of_grade_F++;
+      } 
+}
+
+alert("The percentage of a student's GPA of B is " + (no_of_grade_B/no_of_students*100) + "%")
+alert("The number of students with GPA of A is " + (no_of_grade_A))
+alert("The number of students who failed is " +(no_of_grade_F) )
