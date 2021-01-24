@@ -1,0 +1,15 @@
+Functional Programing: Chia thành nhiều function ( functionA, functionB, functionC)
+
+OOP: Lập trình hướng đối tượng là lập trình dựa trên đối tượng => chia chương trình ra bằng nhiều đối tượng, đi giải quyết vấn đề bằng các đối tượng đấy
+Ví dụ: Viết phương trình quản lý nyc
+=> Đối tượng: nyc => Giải quyết: đi xử lsy đối tượng nyc
+=> CRUD => create, read, update, delete
+
+- Mục đích: dễ trong việc bảo trì, nâng cấp
+- Dữ liệu
++ Cấu trúc dữ liệu: Phức tạp ( VD: không biết là string hay number)
++ Mối quan hệ giữa các dữ liệu với nhau
+VD: Quản lý lớp môn học cho phòng đào tạo => Đối tượng: sinh viên, giáo viên, môn học ( chúng sẽ có mối quan hệ với nhau )
+- Tổ chức hệ thống
++ Thành phần: rõ ràng => dễ dàng bảo trì, nâng cấp
++ Mối quan hệ giữa các thành phần: 
