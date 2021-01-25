@@ -1,5 +1,4 @@
 export class goodManagement{
-    goods = [];
     id;
     name;
     price;
@@ -7,8 +6,7 @@ export class goodManagement{
     discount;
     dateModified;
 
-    constructor(id, name, price, manufacturer, discount, dateModified, goods){
-        this.goods = goods;
+    constructor(id, name, price, manufacturer, discount, dateModified){
         this.id = id;
         this.name = name;
         this.price = price;
@@ -16,12 +14,5 @@ export class goodManagement{
         this.discount = discount;
         this.dateModified = dateModified;
     }
-
-    addGood(good) {
-        this.dateModified = new Date().toTimeString();
-        this.booksList.push(good);
-        console.log("Good added");
-      }
-
 }
 
