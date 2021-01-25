@@ -1,3 +1,4 @@
+// import {Memes} from './meme'
 export class MemeCollection{
     memes = [];
     id; 
@@ -32,6 +33,10 @@ export class MemeCollection{
                 this.memes.splice(i, 1);
                 console.log("Meme deleted");
             }
+            else{
+                console.log(`Can't find the meme with id ${id}`);
+                console.log(this.memes);
+            }
         }
     }
     show() {
@@ -43,6 +48,6 @@ export class MemeCollection{
       }
 }
 
-let meme1 = new Memes('1',"this is fine","https://www.kapwing.com/resources/content/images/2019/08/final_5d5c82e9c293510014745a35_273733.jpg",'2014-02-09')
-console.log(meme1.show());
+// let meme1 = new Memes('1',"this is fine","https://www.kapwing.com/resources/content/images/2019/08/final_5d5c82e9c293510014745a35_273733.jpg",'2014-02-09')
+// console.log(meme1.show());
 // let memeCollection 1 = ('')
