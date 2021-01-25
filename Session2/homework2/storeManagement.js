@@ -22,10 +22,12 @@ export class StoreManagement{
     sellGood(id){
         for (let i = 0; i < this.goods.length; i++) {
             if(this.goods[i].id == id) {
-                this.money += goods[i].price*(100 - goods[i].discount)/100;
-                console.log(this.money)
+                this.money += this.goods[i].price*(100 - this.goods[i].discount)/100;
+                console.log(this.money);
+                console.log(`${this.goods[i].name} has been sold`);
                 this.goods.splice(i, 1);
-                console.log("Good has been sold");
+                console.log(this.goods)
+                
             }
             else{
                 console.log(`Can't find the good with id ${id}`);
@@ -35,6 +37,7 @@ export class StoreManagement{
     }
     showMoney(){
         console.log(this.money)
+        console.log(this.goods)
     }
 }
 

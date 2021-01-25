@@ -15,3 +15,6 @@ let StoreManagement1 = new StoreManagement([chair,hamburger],0)
 StoreManagement1.addGood(jacket)
 
 StoreManagement1.sellGood("1")
+StoreManagement1.sellGood('2')
+
+StoreManagement1.showMoney()
