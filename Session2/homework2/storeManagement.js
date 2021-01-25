@@ -1,10 +1,10 @@
-import {goodManagement} from "./goodManagement"
-import {clothes} from "./clothes"
-import {houseWare} from "./houseWare"
-import {food} from "./food"
+import {goodManagement} from "./goodManagement";
+import {clothes} from "./clothes";
+import {houseWare} from "./houseWare";
+import {food} from "./food";
 
 
-class StoreManagement{
+export class StoreManagement{
     goods = [];
     money = 0;
 
@@ -31,7 +31,8 @@ class StoreManagement{
             }
         }
     }
+    showMoney(){
+        console.log(this.money)
+    }
 }
 
-let chair = new houseWare('1','chair',10,'company1','2020-02-01','very stable')
-console.log(chair)

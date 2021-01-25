@@ -1,6 +1,6 @@
 import {goodManagement} from "./goodManagement"
 
-class food extends goodManagement{
+export class food extends goodManagement{
     taste;
 
     constructor(id, name, price, manufacturer, dateModified, taste){
