@@ -16,14 +16,16 @@ export class StoreManagement{
     addGood(good){
         this.goods.push(good);
         console.log('Good added')
+        console.log(this.goods)
     }
 
     sellGood(id){
         for (let i = 0; i < this.goods.length; i++) {
             if(this.goods[i].id == id) {
+                this.money += goods[i].price*(100 - goods[i].discount)/100;
+                console.log(this.money)
                 this.goods.splice(i, 1);
                 console.log("Good has been sold");
-                this.money += good.price*(100 - good.discount)/100;
             }
             else{
                 console.log(`Can't find the good with id ${id}`);
