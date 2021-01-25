@@ -1,4 +1,4 @@
-import {goodManagement} from "./goodManagement"
+import {goodManagement} from "./goodManagement.js"
 
 export class food extends goodManagement{
     taste;

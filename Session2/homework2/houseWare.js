@@ -1,5 +1,5 @@
 
-import {goodManagement} from "./goodManagement"
+import {goodManagement} from "./goodManagement.js"
 
 export class houseWare extends goodManagement{
     stability;
