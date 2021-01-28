@@ -51,7 +51,7 @@ async function createMovie(id, data){
 async function createReview(user_id, movie_id, data){
     let user_result = await firebase.firestore().collection('users').doc(user_id).get();
     let movie_result = await firebase.firestore().collection('movies').doc(movie_id).get();
-    let user_reviews = user_result.data().reviews
+    let user_reviews = user_result.data().reviews 
     let movie_reviews = movie_result.data().reviews
     let user_name = user_result.data().name
     let movie_name = movie_result.data().name
@@ -83,21 +83,21 @@ async function createReview(user_id, movie_id, data){
 
 // ____________________________________________________________________
 // FIND MOVIE
-let search_data = string(prompt("Please enter the Movie name")).value.toLowerCase()
-let list = []
-async function findMovie(search_data) {
+
+async function findMovie() {
+    let search_data = prompt("Please enter the Movie name")
     let result = await firebase
         .firestore()
         .collection('movies')
-        .where('name', isGreaterThanOrEqualTo: search_data)
-        .where('name', isLessThan, search_data:'z')
-        .snapshots();
+        .where('name', '>=', search_data)
+        //.where('name', '<', search_data +'z')
+        .get();
 
     console.log(result)
     for(let document of result.docs){
         console.log(document.data())
-        // console.log(document.id, document.data())
     }
+    console.log("Finished")
 }
 
-findMovie('fro')
+findMovie()
