@@ -53,20 +53,51 @@ async function createReview(user_id, movie_id, data){
     let movie_result = await firebase.firestore().collection('movies').doc(movie_id).get();
     let user_reviews = user_result.data().reviews
     let movie_reviews = movie_result.data().reviews
-    user_reviews.push(data.content)
-    movie_reviews.push(data.content)
+    let user_name = user_result.data().name
+    let movie_name = movie_result.data().name
+    user_reviews.push(`${data.content} for ${movie_name}`)
+    movie_reviews.push(`${data.content} by ${user_name}`)
     firebase.firestore().collection('users').doc(user_id).update({user_reviews});
     firebase.firestore().collection('movies').doc(movie_id).update({movie_reviews});
-    firebase.firestore().collection('reviews').add(data);
+    firebase.firestore().collection('reviews').add(data)
+    .then(function(docRef){
+        // console.log("Document written with ID: ", docRef.id);
+        firebase.firestore().collection('reviews').doc(docRef.id)
+        .update({
+            movie_name: movie_name, 
+            user_name: user_name});
+        console.log("You can now also access this. as expected: ", this.foo)
+    }
+    )
+    .catch(error => console.error("Error adding document: ", error))
+
     console.log(movie_reviews)
-    // let user_name = user_result.data().name
-    // let movie_name = movie_result.data().name
+
 
 }
 
 // createReview('QdJPTt1EdXTNYSPVY7ce', 'gwjGckgtgkWJavyoBLuM',
 // {
-//     name_of_movie: String(movie_name),
-//     name_of_user: String(user_name),
 //     content: 'Excellent'
 // });
+
+// ____________________________________________________________________
+// FIND MOVIE
+let search_data = string(prompt("Please enter the Movie name")).value.toLowerCase()
+let list = []
+async function findMovie(search_data) {
+    let result = await firebase
+        .firestore()
+        .collection('movies')
+        .where('name', isGreaterThanOrEqualTo: search_data)
+        .where('name', isLessThan, search_data:'z')
+        .snapshots();
+
+    console.log(result)
+    for(let document of result.docs){
+        console.log(document.data())
+        // console.log(document.id, document.data())
+    }
+}
+
+findMovie('fro')

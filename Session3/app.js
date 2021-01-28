@@ -56,7 +56,7 @@ async function readUserWithCondition(field, operator, value) {
 
 // readUserWithCondition('status', '==','ế');
 // readUserWithCondition('age','>=', 20);
-readUserWithCondition('appearances','array-contains','đẹp trai')
+// readUserWithCondition('appearances','array-contains','đẹp trai')
 
 //UPDATE
 
