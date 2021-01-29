@@ -27,7 +27,7 @@ async function readUserById(id) {
     console.log(result.data())
 }
 
-readUserById("mcD6amXbhHmM8hIrlQO0")
+// readUserById("mcD6amXbhHmM8hIrlQO0")
 
 async function readAllUsers() {
     let result = await firebase.firestore().collection('users').get();
