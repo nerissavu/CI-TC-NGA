@@ -19,7 +19,9 @@ export class MemeCollection{
         for (let i = 0; i < this.memes.length; i++) {
             if(this.memes[i].id == id) {
                 this.memes[i] = data;
+                // this.memes[i].update(data);
                 console.log("Meme updated");
+                console.log(this.memes[i])
             }
             else{
                 console.log(`Can't find the meme with id ${id}`);
