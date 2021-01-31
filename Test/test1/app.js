@@ -7,12 +7,18 @@ for (i=0;i<a_numbers.length;i++){
     if(a_numbers[i] > 0){
         let x = m - a_numbers[i]
         for(j=0;j<(a_numbers.length-1);j++){
-            if(a_numbers[j] = x){
-                console.log(a_numbers[i]+','+a_numbers[j])
+            if((a_numbers[j]) > (a_numbers[i])){
+                if(a_numbers[j] == x){
+                    console.log(a_numbers[i]+','+a_numbers[j])
+                } 
+                else {
+                    console.log('Không tìm thấy')
+                    break
+                }
             }
         }
-    }
-    else{
+    } 
+    else {
         console.log('Please enter your number again')
     }
 }
