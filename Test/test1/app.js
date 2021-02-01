@@ -13,7 +13,6 @@ for (i=0;i<a_numbers.length;i++){
                 } 
                 else {
                     console.log('Không tìm thấy')
-                    break
                 }
             }
         }
