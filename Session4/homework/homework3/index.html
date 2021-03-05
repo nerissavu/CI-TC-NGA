@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <p class='h1 text-center'>Cộng hòa xã hội chủ nghĩa Việt Nam</p>
+    <p class='h3 text-center'>Độc lập - Tự do - Hạnh phúc</p>
+    <div class = 'container'>
+        <form name = "form">
+            <div class = "form-group">
+                <label>Tên cuộc bầu cử</label>
+                <input id="name_of_baucu" type="text" name='name_cuoc_bau_cu' class="form-control">
+            </div>
+
+            <div class = "form-group">
+                <label>Số phiếu bầu</label>
+                <input type="text" name='so_phieu_bau_cu' class="form-control">
+            </div>
+
+            <div class = "form-group">
+                <label>Danh sách ứng viên</label>
+                <div id = "Candidate-list">
+                    <input type="text" name='candidates' class="form-control" placeholder="Tên ứng viên">
+                </div>
+                <br>
+                <button type="button" id="add-candidate-btn" class = "btn btn-primary">+</button>
+            </div>
+
+            <div class="form-group">
+                <label>Tính hợp lệ</label> 
+                <input type = "text" name ="validation" class ="form-control" placeholder="Số ứng viên tối đa được chọn trong 1 phiếu">
+            </div>
+            <input type="submit">  
+
+        </form>
+    </div>
+    <script src="./app.js"></script>
+
+</body>
+</html>

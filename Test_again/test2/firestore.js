@@ -24,7 +24,7 @@ async function createEmployee(id, data, position){
     firebase.firestore().collection('managers').doc(id).update({employees});
 }
 
-createEmployee('uBVg8OB8GWoCJDSv87nM', {
-    name: 'Ngô Mạnh Hùng',
-    taskList: ['coding']
-}, 'test')
+// createEmployee('uBVg8OB8GWoCJDSv87nM', {
+//     name: 'Ngô Mạnh Hùng',
+//     taskList: ['coding']
+// }, 'test')

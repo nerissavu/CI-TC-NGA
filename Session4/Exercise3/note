@@ -1,0 +1,16 @@
+// Dữ liệu
+// Ứng viên: name, voteNumber, description
+
+// Vote: id, candidate_list, 
+
+    // show form:
+        nhập tên cuộc bầu cửa
+        nhập danh sách ứng viên
+        số lượng phiếu bầu
+        tính hợp lệ
+    
+    // bắt đầu kiểm phiếu
+        trong 1 thời điểm --> 
+            hiển thị 1 phiếu
+                --> hiển thị danh sách ứng viên
+                --> loại trừ ứng viên tương ứng trên phiếu thật
