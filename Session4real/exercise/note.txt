@@ -1,0 +1,1 @@
+DOM: đối tượng: có thuộc tính, phương thức, lưu thông tin của thẻ HTML tương ứng(gồm nội dung, thuộc tính, các sự kiện, style)

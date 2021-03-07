@@ -19,29 +19,36 @@ function validateForm(){
 
     if (name_cuoc_bau_cu==null || name_cuoc_bau_cu==""){  
         alert("Tên cuộc bầu cử can't be blank");  
-        return false;  
+        // return false;  
     }else if(typeof(name_cuoc_bau_cu) != String){
         alert("This must be a name");
-        return false;
+        // return false;
     }else if (so_phieu_bau==null || so_phieu_bau==""){  
         alert("Số phiếu bầu can't be blank");  
-        return false;  
+        // return false;  
     }else if(typeof(so_phieu_bau) != Number){
         alert("This must be a number");
-        return false;
+        // return false;
     }else if (candidates==null || candidates==""){  
         alert("Số phiếu bầu can't be blank");  
-        return false;  
+        // return false;  
     }else if(typeof(candidates) != String){
         alert("This must be a string");
-        return false;
+        // return false;
     }else if (validation==null || validation==""){  
         alert("Số phiếu bầu can't be blank");  
-        return false;  
+        // return false;  
     }else if(typeof(validation) != Number){
         alert("This must be a number");
-        return false;
+        // return false;
     }
+
+    console.log(name_cuoc_bau_cu);
+    console.log(so_phieu_bau);
+    console.log(candidates);
+    console.log(validation);
 }
+
+validateForm()
 
 
