@@ -7,10 +7,11 @@ $template.innerHTML = `
 
 
     <style>
+
         .card {
             display: grid;
-            width: 300px
-            height: 300px
+            width: 300px;
+            height: 300px;
             grid-template-columns: 300px;
             grid-template-rows: 80px 150px 60px;
             grid-template-areas: "title" "text" "stats";
@@ -53,21 +54,19 @@ $template.innerHTML = `
         }
     </style>
     
-    <div class="cards-container">
-        <div class="card">
-            <div class ="card-title">
-                <h4 id="name" >Task</h4>
+    <div class="card">
+        <div class ="card-title">
+            <h4 id="name" >Task</h4>
+        </div>
+        <div class ="card-text">
+            <p id="description">This is the description</p>
+        </div>
+        <div class="card-stats">
+            <div class="stat">
+                <p id="deadline">2021/03/06</p>
             </div>
-            <div class ="card-text">
-                <p id="description">This is the description</p>
-            </div>
-            <div class="card-stats">
-                <div class="stat">
-                    <p id="deadline">2021/03/06</p>
-                </div>
-                <div class="stat">
-                    <i id="status" class="fas fa-check"></i>
-                </div>
+            <div class="stat">
+                <i id="status" class="fas fa-check"></i>
             </div>
         </div>
     </div>
@@ -100,7 +99,7 @@ export default class TaskContainer extends HTMLElement {
         }else if(attrName == 'deadline'){
             this.$deadline.innerHTML = newValue;
         }else if(attrName == 'status'){
-            this.$status.class = newValue;
+            this.$status.className = newValue;
         }
     }
 }
