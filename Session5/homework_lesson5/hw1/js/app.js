@@ -1,4 +1,5 @@
 import ClassContainer from './ClassContainer.js'
+import PeopleContainer from './PeopleContainer.js'
 
 let data = [
     {
@@ -33,11 +34,25 @@ let $app = document.getElementById('app');
 for (let classData of data) {
     let $classContainer = document.createElement('class-container');
     $classContainer.setAttribute('name', classData.name);
+
     $classContainer.setAttribute('teacher', JSON.stringify(classData.teacher));
+    let $teacherContainer = document.createElement('people-container');
+    $teacherContainer.setAttribute('name', classData.teacher.name);
+    $teacherContainer.setAttribute('age', classData.teacher.age);
+    $teacherContainer.setAttribute('address', classData.teacher.address);
+    // $teacher.appendChild($teacherContainer);
+
+
     $classContainer.setAttribute('students', JSON.stringify(classData.students));
+    for (let student of classData.students) {
+        let $studentContainer = document.createElement("people-container");
+        $studentContainer.setAttribute("name", student.name);
+        $studentContainer.setAttribute("age", student.age);
+        $studentContainer.setAttribute("address", student.address);
+        // $students.appendChild($studentContainer);
+    } 
     $classContainer.setAttribute('status', classData.status);
 
     $app.appendChild($classContainer);
-
 
 }
