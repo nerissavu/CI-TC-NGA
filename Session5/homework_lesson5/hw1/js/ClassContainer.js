@@ -1,13 +1,14 @@
+import PeopleContainer from './PeopleContainer.js'
 const $template = document.createElement('template');
 $template.innerHTML = `
     <div>
         <div id="name"></div>
         <br>
         <div id="teacher"></div>
-        <br>
         <div id="students"></div>
-        <br>
         <div id="status"></div>
+        <br>
+        <br>
     </div>
 
 `
@@ -34,29 +35,26 @@ export default class ClassContainer extends HTMLElement {
 
         if(attrName == 'name'){
             this.$name.innerHTML = newValue
-        // }else if(attrName == 'teacher'){
-        //     // this.$teacher.innerHTML = newValue
-        //     let teacher = JSON.parse(newValue)
-        //     console.log(teacher)
-        //     let $classContainer = document.createElement('class-container');
-        //     $classContainer.setAttribute('name', teacher.name)
-        //     $classContainer.setAttribute('age', teacher.age)
-        //     $classContainer.setAttribute('address', teacher.address)
+        }else if(attrName == 'teacher'){
+            let teacher = JSON.parse(newValue); 
+            let $teacherContainer = document.createElement('people-container');
+            $teacherContainer.setAttribute('name', teacher.name)
+            $teacherContainer.setAttribute('age', teacher.age)
+            $teacherContainer.setAttribute('address', teacher.address)
 
-        //     this.$teacher.appendChild($classContainer);
+            this.$teacher.appendChild($teacherContainer);
 
-        // }else if(attrName == 'students'){
-        //     // this.$students.innerHTML = newValue;
-        //     let students = JSON.parse(newValue); 
-        //     console.log(students)
-        //     for(let student of students) {
-        //         let $classContainer = document.createElement('todo-container');
-        //         $classContainer.setAttribute('name', student.name)
-        //         $classContainer.setAttribute('description', student.age)
-        //         $classContainer.setAttribute('deadline', student.address)
+        }else if(attrName == 'students'){
+            let students = JSON.parse(newValue); 
+            console.log(students)
+            for(let student of students) {
+                let $studentContainer = document.createElement('people-container');
+                $studentContainer.setAttribute('name', student.name)
+                $studentContainer.setAttribute('age', student.age)
+                $studentContainer.setAttribute('address', student.address)
 
-        //         this.$students.appendChild($classContainer);
-        //     }
+                this.$students.appendChild($studentContainer);
+            }
         }else if(attrName == 'status'){
             this.$status.innerHTML = newValue;
         }

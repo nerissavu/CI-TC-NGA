@@ -4,6 +4,7 @@ $template.innerHTML = `
         <div id="name"></div>
         <div id="age"></div>
         <div id="address"></div>
+        <br>
     </div>
 
 `
