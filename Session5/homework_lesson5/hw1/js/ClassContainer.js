@@ -29,10 +29,7 @@ export default class ClassContainer extends HTMLElement {
         return['name','teacher','students','status'];
     }
 
-    // được gọi khi thuộc tính được định nghĩa thay đổi giá trị
     attributeChangedCallback(attrName, oldValue, newValue) {
-        // console.log("thuộc tính"+ attrName+ "thay đổi giá trị thành:" + newValue)
-
         if(attrName == 'name'){
             this.$name.innerHTML = newValue
         }else if(attrName == 'teacher'){

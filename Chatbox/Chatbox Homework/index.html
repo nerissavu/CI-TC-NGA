@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signinsignup</title>
+    <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
+    <!-- Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="app" class="container">
+        <div class="form-container sign-up-container">
+            <signup-form></signup-form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <login-form></login-form>
+        </div>
+
+        <div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-left">
+					<h1>Welcome Back!</h1>
+					<p>To keep connected with us please login with your personal info</p>
+					<button class="ghost" id="signIn">Sign In</button>
+				</div>
+				<div class="overlay-panel overlay-right">
+					<h1>Hello, Friend!</h1>
+					<p>Enter your personal details and start journey with us</p>
+					<button class="ghost" id="signUp">Sign Up</button>
+				</div>
+			</div>
+		</div>
+    </div>
+    <script src="./js/app.js" type="module"></script>
+</body>
+</html>
