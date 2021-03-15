@@ -135,15 +135,17 @@ export default class LoginForm extends HTMLElement {
             if(email == '') {
                 this.$email.error = "Input your email"
                 console.log("Input your email");
-            } else {
+            } else if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
                 this.$email.error = "";
+            } else {
+                this.$email.error = "You have entered an invalid email address!";
             }
 
             if(password == '') {
                 this.$password.error = "Input your password"
                 console.log("Input your password");
             } else {
-                this.$password.error = "";
+                this.$password.error = " ";
             }
         }
     }

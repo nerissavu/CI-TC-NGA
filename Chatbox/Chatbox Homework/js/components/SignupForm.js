@@ -127,8 +127,10 @@ export default class SignupForm extends HTMLElement {
             if(email == '') {
                 this.$email.error = "Input your email"
                 console.log("Input your email");
-            } else {
+            } else if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
                 this.$email.error = "";
+            } else {
+                this.$email.error = "You have entered an invalid email address!";
             }
 
             if(password == '') {
