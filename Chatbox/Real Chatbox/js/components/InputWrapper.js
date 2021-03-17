@@ -50,5 +50,16 @@ export default class InputWrapper extends HTMLElement {
     set error(message){
         this.setAttribute('error',message)
     }
+
+    // condition: callback: truyền 1 hàm vào trong hàm khác -> hàm được truyền là hàm callback
+    validate(condition, message){
+        if(condition(this.value)) {
+            this.error = "";
+            return true;
+        } else {
+            this.error = message;
+            return false
+        }
+    }
 }
 window.customElements.define('input-wrapper', InputWrapper)

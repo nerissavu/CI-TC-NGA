@@ -1,5 +1,5 @@
 const $template = document.createElement('template');
-$template.innerHTML = `
+$template.innerHTML = /*html*/ `
 
     <div class="form-group">
         <input type = 'text' id='input' class='form-control' placeholder = 'This is input'>
@@ -80,6 +80,16 @@ export default class InputWrapper extends HTMLElement {
 
     set error(message){
         this.setAttribute('error',message)
+    }
+
+    validate(condition, message){
+        if(condition(this.value)) {
+            this.error = "";
+            return true;
+        } else {
+            this.error = message;
+            return false
+        }
     }
 }
 window.customElements.define('input-wrapper', InputWrapper)

@@ -1,5 +1,7 @@
+import {signin} from '../models/users.js'
+
 const $template = document.createElement('template');
-$template.innerHTML = `
+$template.innerHTML = /*html*/ `
     <script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/7.16.1/firebase-auth.js"></script>
     <!-- Font Awesome-->
@@ -133,21 +135,44 @@ export default class LoginForm extends HTMLElement {
             let email = this.$email.value;
             let password = this.$password.value;
 
-            if(email == '') {
-                this.$email.error = "Input your email"
-                console.log("Input your email");
-            } else if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
-                this.$email.error = "";
-            } else {
-                this.$email.error = "You have entered an invalid email address!";
+            // if(email == '') {
+            //     this.$email.error = "Input your email"
+            //     console.log("Input your email");
+            // } else if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
+            //     this.$email.error = "";
+            // } else {
+            //     this.$email.error = "You have entered an invalid email address!";
+            // }
+
+            // if(password == '') {
+            //     this.$password.error = "Input your password"
+            //     console.log("Input your password");
+            // } else {
+            //     this.$password.error = " ";
+            // }
+
+            function require(value){
+                return value != '';
+            }  
+
+            function validateEmail(email) {
+                const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(String(email).toLowerCase());
             }
 
-            if(password == '') {
-                this.$password.error = "Input your password"
-                console.log("Input your password");
-            } else {
-                this.$password.error = " ";
+            let isPassed = 
+                (
+                    this.$email.validate(require,'Input your email') &&
+                    this.$email.validate(validateEmail,'Wrong email format')
+                ) &
+                
+                this.$password.validate(require,'Input your password')
+            
+            if(isPassed){
+                signin(email, password)
+                // console.log('Signed in successfully')
             }
+
         }
     }
 }
