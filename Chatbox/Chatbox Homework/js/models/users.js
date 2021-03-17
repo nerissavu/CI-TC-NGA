@@ -13,11 +13,8 @@ export async function signup(name, email, password) {
         await firebase.firestore().collection('users').add({
             name: name,
             email: email,
-            // password: md5(password),
-            password: password
+            password: md5(password),
         });
-        // bất đồng bộ
-        // try/catch/finally
     
         console.log('Register Successfully')
     }else {
@@ -32,18 +29,15 @@ export async function signin(email, password) {
         .where('email','==', email)
         .get();
 
-    console.log(response)
-    console.log(typeof(password))
     if(response.empty) {
-        alert('Your email or your password is not correct')
+        alert('Your email or your password is incorrect')
     }else{
         for(let document of response.docs){
-            console.log(document.password)
-            // if (document.password == password){
-            //     console.log('Signin Successfully')
-            // }else{
-            //     alert('Your email or your password is incorrect')
-            // }
+            if (document.data().password == md5(password)){
+                console.log('Signin Successfully')
+            }else{
+                alert('Your email or your password is incorrect')
+            }
         }
     }
 
