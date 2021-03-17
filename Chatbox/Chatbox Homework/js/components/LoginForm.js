@@ -135,22 +135,6 @@ export default class LoginForm extends HTMLElement {
             let email = this.$email.value;
             let password = this.$password.value;
 
-            // if(email == '') {
-            //     this.$email.error = "Input your email"
-            //     console.log("Input your email");
-            // } else if(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)){
-            //     this.$email.error = "";
-            // } else {
-            //     this.$email.error = "You have entered an invalid email address!";
-            // }
-
-            // if(password == '') {
-            //     this.$password.error = "Input your password"
-            //     console.log("Input your password");
-            // } else {
-            //     this.$password.error = " ";
-            // }
-
             function require(value){
                 return value != '';
             }  
