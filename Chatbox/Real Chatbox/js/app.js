@@ -1,6 +1,7 @@
 import InputWrapper from './components/InputWrapper.js'
 import LoginForm from './components/LoginForm.js'
 import RegisterForm from './components/RegisterForm.js'
+import AuthScreen from './screen/AuthScreen.js'
 
 // let value = "Hack não"
 

@@ -1,3 +1,6 @@
+import {login} from "../models/users.js"
+import {require, validateEmail} from "../utils.js"
+
 const $template = document.createElement('template');
 $template.innerHTML = `
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -27,19 +30,15 @@ export default class LoginForm extends HTMLElement {
             event.preventDefault();
             let email = this.$email.value;
             let password = this.$password.value;
+            let isPassed = (
+                    this.$email.validate(require,'Input your email') &&
+                    this.$email.validate(validateEmail,'Wrong email format')
+                ) &
+                
+                this.$password.validate(require,'Input your password') 
 
-            if(email == '') {
-                this.$email.error = "Input your email"
-                console.log("Input your email");
-            } else {
-                this.$email.error = "";
-            }
-
-            if(password == '') {
-                this.$password.error = "Input your password"
-                console.log("Input your password");
-            } else {
-                this.$password.error = "";
+            if(isPassed) {
+                login(email, password);
             }
         }
     }
