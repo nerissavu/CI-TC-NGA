@@ -1,4 +1,0 @@
-JSON là 1 string có quy tắc => phân tích -> object/array
-
-array/object -> string: stringify
-string(JSON) -> array/object: parse

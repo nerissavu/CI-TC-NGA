@@ -1,0 +1,6 @@
+import TotalMoney from './components/TotalMoney.js'
+import InputWrapper from './components/InputWrapper.js'
+import LoaningForm from './components/LoaningForm.js'
+import LoaningContainer from './components/LoaningContainer.js'
+import LoaningList from './components/LoaningList.js'
+import TextareaWrapper from './components/TextareaWrapper.js'
